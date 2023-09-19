@@ -50,9 +50,7 @@ jobs:
           ./scripts/feeds install -a
 
       - name: Generate configuration file
-        run: |
-          sed -i 's/^[ \t]*//g' ./.config
-          make defconfig
+        run: make defconfig
 
       - name: Download packages
         run: make download -j16
